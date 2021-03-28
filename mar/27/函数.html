@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+</head>
+<body>
+    <script>
+        /*
+            使用函数声明的方式创建一个函数 会在所有的代码运行之前先执行
+            即debug的时候会发现function 定义函数的代码不会执行 因为已经提前执行了
+        */
+
+        function func() {
+            
+        }
+
+        /*
+           而使用函数表达式的方式创建函数的时候只有当代码运行到定义的那一条语句时才会创建函数对象
+        */
+
+        var foo =function(){
+        }
+
+        /*
+            在JS中函数是一种特殊的对象，可以设置|访问属性
+            但是函数又不是普通的对象,体现在能够被执行
+        */
+
+              function fn() {
+
+                }
+            console.log(fn instanceof Object) // 是Object类型的实例
+            console.log(fn.prototype) // 内部有属性
+            console.log(fn.call) // 内部有方法
+            fn.t1 = 'atguigu' // 可以添加属性
+            fn.t2 = function () { // 可以添加方法
+            console.log('t2() '+this.t1)
+            }
+
+
+
+
+    </script>
+</body>
+</html>

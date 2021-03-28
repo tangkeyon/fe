@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Foo(){
+    
+        }
+
+        // Foo.prototype.age = 15;//这里的修改只是在修改原型对象中保存的变量
+
+        // var foo =new Foo();
+        // console.log(foo.age);
+
+        // Foo.prototype.age =20;
+        // console.log(foo.age);
+
+        // Foo.prototype = {   //原型本来指向的是Obje
+        //     name: "Alice",
+        //     age :30
+        // }
+        // var fee =new Foo();
+        // console.log(fee.age);
+
+        //使用new Function创建出来的<函数对象>的原型对象是Function类型的
+        //使用 function 的方式创建函数对象的原型对象是Object类型的
+    //    var foo =new Function();
+    //    console.log(foo.__proto__);
+    //    console.log(foo.__proto__.__proto__.__proto__);
+
+
+      function Fee(){
+          //若函数中定义了fun函数的话Fee构造方法创建的实例对象就不会访问原型中的fun函数了，
+          //但是函数对象还是会访问Function类型的原型对象中的fun函数
+        //   this.fun =function(){
+        //       console.log(3);    
+        //           }
+
+      }
+
+      Object.prototype.fun =function(){
+          console.log(1);
+      }
+
+      Function.prototype.gee=function(){
+          console.log(2);
+      }
+
+      var fee =new Fee();
+      //fee.fun();//fun函数绑定在Object的原型上，对象在访问函数和属性的时候会现在本身找，
+      //找不到的话会到原型链上找 使用function创建的函数对象的原型对象是Object类型的所以可以获得
+      //Object原型对象上的函数,但是无法访问到Function原型对象上的函数
+      //fee.gee();
+
+
+      //这里的函数可以调用方法是将函数当做对象来使用，就相当用new Function()的方式创建的函数对象
+      //函数对象的__proto__属性是Function类型的，但是__proto__.__proto__属性是object类型的
+      //所以函数对象的原型链既可以访问Object类型的原型链，也可以访问Function类型的原型链
+      //但是是先访问 Function类型的原型链，如果没有
+    //   Fee.gee();
+    //   Fee.fun();
+
+   //fee.fun()
+
+   /*
+     对JS的简单思考：
+
+       JS的一个最大的缺陷就是没有引入命名空间，所以一些在Java里的简单操作在JS中会变得复杂
+       比如在Java中如果一个变量是公共的，不想每个变量都创建一份，可以声明为static,JS中的一个变量
+       如果是公共的理论上可以这样操作：
+         
+          var age =12;  //年龄是公共的
+
+          function Person(name){
+              this.name = name;
+              this.age=age;
+          }
+
+          但是这种操作会污染全局的命名空间，但是放在构造函数内部的话又会每次创建对象都会创建一次，所以在JS中，这种
+          公共的属性或方法会被放置在原型对象中
+
+        比如在Java中，两个函数想操作一个变量，可以将这个变量定义为成员变量，理论上在JS中可以这样：
+        var num = 12;
+        
+        function add(){
+            num++;
+        }
+
+        function sub(){
+            num--;
+        }
+
+        但是把变量定义在全局位置会污染命名空间，所以在JS里可以使用闭包来让一个函数访问到另一个函数的局部变量
+   */
+
+   
+   
+
+
+
+
+
+  
+        
+
+
+
+
+    </script>
+</body>
+</html>

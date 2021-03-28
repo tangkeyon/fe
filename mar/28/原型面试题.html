@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型面试题</title>
+</head>
+<body>
+    <script>
+         /*
+        测试题1
+   */
+            var A = function() {
+
+            }
+            A.prototype.n = 1  //往原型对象上保存值
+
+            var b = new A()    //b的原型对象还是指向Object类型的对象
+
+            A.prototype = {    //将原型对象指向新的对象
+            n: 2,
+            m: 3
+            }
+
+            var c = new A()  //C的原型对象已经指向新的对象了
+            console.log(b.n, b.m, c.n, c.m)
+
+
+                    /*
+                    测试题2
+                    */
+                 
+                    
+
+                  
+                    var F = function(){};
+                    Object.prototype.a = function(){
+                        console.log('a()')
+                    };
+                    Function.prototype.b = function(){
+                        console.log('b()')
+                    };
+                    var f = new F();
+                    f.a()
+                    f.b()
+                    F.a()  // 使用表达式的方式创建函数对象指向的原型对象的类型是Function
+                    F.b()  // 但是Function类型的__proto__是object类型
+
+
+                  
+                    
+                    
+                    
+                    </script>
+</body>
+</html>

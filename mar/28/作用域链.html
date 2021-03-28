@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1. 理解
+        * 多个上下级关系的作用域形成的链, 它的方向是从下向上的(从内到外)
+        * 查找变量时就是沿着作用域链来查找的
+        2. 查找一个变量的查找规则(先在本层找，本层找不到就去上一层)
+        * 在当前作用域下的执行上下文中查找对应的属性, 如果有直接返回, 否则进入2
+        * 在上一级作用域的执行上下文中查找对应的属性, 如果有直接返回, 否则进入3
+        * 再次执行2的相同操作, 直到全局作用域, 如果还找不到就抛出找不到的异常
+
+        注意和查找对象属性的规则区分出来：查找对象属性的规则是基于原型链
+-->
+
+  <script>
+
+
+
+  </script>
+</body>
+</html>

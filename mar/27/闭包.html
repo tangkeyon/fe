@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.27-闭包</title>
+</head>
+<body>
+
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+
+    <script>
+        // var btns = document.getElementsByTagName("button");
+        // for(var i=0,length = btns.length;i<length;i++){   //length这样定义只会创建一次
+        //     btns[i].onclick=function(){
+        //         alert("我是第"+(i+1)+"个按钮");
+        //     }
+        // }
+
+
+
+
+
+
+        /*可以使用闭包拟合出 封装 的效果*/
+
+        function foo(){
+            var age = 12;
+
+            function add(){
+                age++;
+                return age
+            }
+
+            return add;  //外界只能使用一定的方法来控制内部的数据
+          }
+
+
+          var res = foo();
+          console.log(res());
+    </script>
+</body>
+</html>

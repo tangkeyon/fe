@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>执行上下文面试题</title>
+</head>
+<body>
+    <script>
+
+       /* 
+          在全局的位置使用function定义的函数和使用var定义的变量都会预处理
+          但是使用var定义的变量的优先级会高于使用function定义的函数
+          即：先为var定义的变量赋值为undefined，再为函数赋值
+          所以如果变量和函数同名，函数会把变量覆盖
+        */
+
+        function a() {}
+            var a;
+            console.log(typeof a)//function
+
+
+        /*
+          注意这里的var b定义在全局的位置，所以会处理b
+        */
+            if (!(b in window)) {
+                var b = 1;
+            }
+            console.log(b) //undefined
+
+        /* 
+          注意JS中代码有一个预处理阶段
+        */            
+             var c = 1
+             function c(c) {
+                console.log(c)
+                var c = 3
+            }
+            c(2) //is not a function
+
+            /* 预处理阶段：
+
+                    var c;  //c首先被定义为变量
+
+                    function c();  //再被覆盖为函数
+
+               代码执行阶段： 
+                     c=1          //最后又变为变量
+
+                     c(2);       //此时c是变量这样调用会报错
+
+             */
+                
+    
+
+
+
+
+    </script>
+</body>
+</html>

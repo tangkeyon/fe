@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <script>
+        /*this指的是当前的调用者*/
+
+        /*
+          构造函数中的this指的是新对象
+        
+        */
+        function foo(){
+            console.log(this)
+        }
+        foo()//此时的this是window
+
+        var per = {
+            play: function(){
+                console.log(this);
+            }
+        }
+
+        per.play()//这里的this是函数调用者
+
+        //也可以使用apply或者call来灵活的为当前函数指定this
+
+        foo.call(per);
+
+
+
+
+    </script>
+</body>
+</html>

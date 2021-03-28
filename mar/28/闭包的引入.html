@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包的引入</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    
+
+    <script>
+        /* 
+          为每一个按钮绑定事件，要求点击每个标签会弹出序号
+        */
+
+        var btns =  document.getElementsByTagName("button");
+
+        /* 
+           使用var会始终都基于一个全局变量
+               
+                for(var i = 0,length=btns.length;i<length;i++){
+                    btns[i].onclick = function () {
+                    alert("我是第"+(i+1)+"个按钮");
+                }
+      } */
+
+
+        /* 使用let 每次循环会创建一个新的变量 所以不会干扰 */
+           /* 
+            for(let i = 0,length=btns.length;i<length;i++){
+                btns[i].onclick = function () {
+                    alert("我是第"+(i+1)+"个按钮");
+                    }
+            } */
+
+
+
+            /* for(let i = 0,length=btns.length;i<length;i++){
+                btns[i].index =i;
+                btns[i].onclick = function(){
+                    alert("我是第"+(i+1)+"个按钮");
+
+                }
+            } */
+
+
+            
+
+
+
+        
+            
+
+    </script>
+</body>
+</html>

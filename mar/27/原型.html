@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型</title>
+</head>
+<body>
+    <script>
+        /*   
+             
+           
+             * 每个函数都有一个prototype属性, 它默认指向一个Object空对象(即称为: 原型对象)
+             * 原型对象中有一个属性constructor, 它指向函数对象
+           */
+
+             function foo(){
+                 console.log("--->")
+             }
+
+             console.log(foo.prototype);
+             console.log(foo.prototype.constructor);
+
+
+            /*
+              给原型对象添加属性(一般都是方法)
+             * 作用: 函数的所有实例对象自动拥有原型中的属性(方法)
+            */
+
+            function Person(){
+
+            }
+
+            Person.prototype.say = function () {
+                
+            }
+
+            /*
+               JS为什么要有原型呢
+            */
+
+            function Person(){
+                /* 如果say方法是公共呢，定义在函数内部则会每次new 构造方法都会创建一次，会造成浪费
+                   为了避免性能的浪费如果把函数定义在全局位置会污染命名空间
+
+                   所以既不能污染全局的变量又不能每一次调用都创建一次，所以只能定义在函数内部
+                   原型就是这样一处位置  把属性定义在该处 只会创建一次 构造函数创建的所有实例对象都包含这个属性
+                  
+                
+                */
+                this.say = function () {  
+
+                }
+            }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

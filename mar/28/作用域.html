@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域</title>
+</head>
+<body>
+        <!--
+            1. 理解
+            * 就是一块"地盘", 一个代码段所在的区域
+            * 它是静态的(相对于上下文对象), 在编写代码时就确定了
+            2. 分类
+            * 全局作用域
+            * 函数作用域
+            * 没有块作用域(ES6有了)
+            3. 作用
+            * 隔离变量，不同作用域下同名变量不会有冲突
+        -->
+    <script>
+
+        // /*全局作用域处处皆可访问  */
+
+        // var a  =12;
+
+        // function foo(){
+        //     console.log(a);
+        // }
+
+        // foo();
+
+        // /*函数作用域只有在函数内部才能访问，全局位置是不能直接访问全局位置的变量的  */
+
+        // function func(){
+        //     var b = 12;
+        // }
+
+        // console.log(b);
+
+        var person = {
+            pname: "Jack",
+            age: 18
+        }
+
+
+        /* {}也可以隔离变量和函数的作用类似 */
+        console.log(pname);
+        console.log(age);
+       
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

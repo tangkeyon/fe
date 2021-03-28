@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包的生命周期</title>
+</head>
+<body>
+    <!--
+        1. 产生: 在嵌套内部函数定义执行完时就产生了(不是在调用)
+        2. 死亡: 在嵌套的内部函数成为垃圾对象时
+-->
+    <script>
+
+   function fn1 () {
+    //    因为使用function定义函数存在函数的提升，所以此处就已经产生了闭包
+      var a = 3
+      function fn2 () {
+        console.log(a)
+      }
+    }
+    fn1();
+    fn1 = null;   //闭包死亡
+
+
+
+
+    </script>
+</body>
+</html>

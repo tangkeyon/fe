@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // var obj =new Object();
+        // obj.name="Lily";
+        // obj.age=12;
+
+        // console.log(obj.age);
+        //   删除对象的属性
+        // delete obj.age;
+
+        // console.log(obj.age);
+
+
+
+        var obj =new Object();
+        // obj["name"]="Alice";
+        // console.log(obj["name"]);
+        // var foo ="name";
+        // //[]内可以直接传递变量名
+        // console.log(obj[foo]);
+
+        //in运算符的使用  判断某个"属性"是否在对象内
+        // obj.age =12;
+        // console.log("age" in obj);
+
+
+
+        //JS中万物皆对象  json是对象 函数也是对象  万物皆属性  对象和变量是属性  函数也是属性
+
+        // var  person ={
+        //     name: "Alice",
+        //     age: 12,
+        //     say: function () {
+        //         console.log(person.age+"----"+person.name);
+        //       }
+        // }
+
+
+        // console.log(person.name);
+        // person.say();
+
+        //万物皆对象
+            //json是对象，function是对象   对象可以作为方法的参数和返回值  也可以作为对象属性
+
+            //json里面有变量和函数    函数里面有变量和函数   对象和函数可以作为函数的参数  对象和函数可以作为函数的返回值
+        
+
+        //万物皆属性
+     
+            //全局变量和函数是window的属性
+
+            
+
+            var age =12;
+            
+
+            function foo(){
+                alert("foo");
+              }
+
+              console.log(window.age);
+              window.foo();
+
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.27-参数传递</title>
+</head>
+<body>
+    <script>
+        var a = 12;
+        var b = a;  //这里是将a的数值复制一份再赋值给b
+
+        var obj1 = new Object();  //obj1中保存的是引用
+        var obj2 = obj1;          //将obj1保存的引用值赋值一份，赋值给obj2
+
+        /*JS中只有值传递 这里的值包括数值和引用值*/
+        /*函数的参数就相当于函数内部的变量*/
+
+
+
+        function foo1(num){
+            num ++;
+            console.log(num);
+        }
+
+        function foo2(obj){
+            obj.name = "Aice";
+            console.log(obj.name)
+        }
+
+        function foo3(obj){
+            //函数中的局部变量先是被实参赋值
+            obj = new Object();  //而后局部变量又指向其他的对象
+            obj.name = "YOP"
+            console.log(obj.name);
+        }
+
+        var num =12;
+        foo1(num);//将num复制一份传递给函数的形参  就相当于将实参的值复制给函数中的局部变量  所以不会影响原值
+        console.log(num);
+
+        var per ={
+            name:  "Jack"
+        }
+        foo2(per);  //将对象的引用值复制一份传递给函数的形参  就相当于将实参的地址值传递给函数中的局部变量 
+        console.log(per.name);
+
+        foo3(per);
+        console.log(per.name);
+
+
+    
+    </script>
+</body>
+</html>

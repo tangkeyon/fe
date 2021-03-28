@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象</title>
+</head>
+<body>
+    <script>
+        /*
+           JS作为一门面向对象的语言本身并没有像Java那样使用class来很好的描述对象
+           在JS中描述对象一般使用函数(构造方法) 或者自定义JSON
+        */
+
+        //JS中面向对象的一种最简单的描述：使用构造函数来创建对象
+        //用new 调用的函数为构造函数
+        //构造函数会在内部创建一个对象(其实该对象和构造函数的类型相同),再将this指向这个对象,执行完构造函数中的代码后
+        //返回对象
+        function Person(name,age){
+            this.name = name;
+            this.age  = age;
+            this.say = function(){
+                console.log("hi ~");
+            }
+        }
+
+        var p1 =  new Person("Lucy",12);
+        console.log(p1);
+        console.log(p1.say());
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

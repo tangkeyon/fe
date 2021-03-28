@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不同数据类型的区分</title>
+</head>
+<body>
+    <script>
+        /*
+          typeof:
+            * 可以区别: 数值, 字符串, 布尔值, undefined, function
+            * 不能区别: null与对象, 一般对象与数组  都会返回object
+        */
+        var a;
+        console.log(typeof a ==='undefined', a === undefined);
+        console.log(typeof Function);
+
+
+
+        /*
+           * instanceof
+           * 专门用来判断对象数据的类型: Object, Array与Function
+        
+        */
+
+        /*
+                 ===
+              * 可以判断: undefined和null 这些只有一个值
+        */
+        var b =null;
+        console.log(b === null);
+    </script>
+</body>
+</html>
