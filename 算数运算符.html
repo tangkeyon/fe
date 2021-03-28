@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //当对非Number值进行 *  - / 运算时，会先将值转化为Number类型的数据再计算
+        //可以利用这一特点  -0  /1  快速将类型转化为数值类型
+        //更方便的一点是可以直接在字符串前添加+
+        console.log(1+true);  //2
+        console.log(1+null);  //1
+        console.log(1+undefined);  //NAN
+        console.log(1+NaN);  //NAN
+        console.log(1+'');  //1
+        console.log(1-false);  //1
+
+        //任何值与字符串进行加法运算，都会先将值转化为字符串再和字符串进行拼接
+
+        console.log(123+"abc"); //123abc
+        console.log(true+"abc"); //trueabc
+
+        //快速转化为Number类型  必须是纯数字的字符串才行
+        console.log(typeof +"123");
+
+        console.log(1 + +"2" +3);//6
+
+
+
+    </script>
+    
+</body>
+</html>

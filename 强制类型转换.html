@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+   
+
+   <script>
+        //   var b;
+        //   var a=null;
+        //   console.log(typeof b);//undefiend
+        //   console.log(typeof a);//object
+
+        //   --------------------------
+
+        //Number(...)方法可将纯数字的转化为对应数字
+        // var n1 ="122";
+        // var n2 =Number(n1);
+        // console.log(typeof n2);
+        // console.log(n2);
+
+        // //Number(...)方法若参数包含其他字符则会返回NAN
+        // var n3 ="123abc";
+        // var n4=Number(n3);
+        // console.log(typeof n4);
+        // console.log(n4);
+
+        //Number(...)方法若参数为null则会返回为0
+    //    console.log(typeof Number(null));
+    //    console.log(Number(null));
+      
+    //    //Number(...)方法若参数为undefiend则会返回为NAN
+    //    console.log(typeof Number(undefined));
+    //    console.log(Number(undefined));
+
+    //     //Number(...)方法若参数为空字符串则会返回0
+    //     console.log(typeof Number(""));
+    //     console.log(Number(""));
+
+        //特别的，如果将字符串转为数字，可以使用parseInt(...)/parseFloat(...),会尽最大可能的将字符串转化为数字
+        var str ="123px";
+        var res =parseInt(str);
+        console.log(typeof res);
+        console.log(res);
+
+        //如果传入的参数不是字符串，会将参数转化为字符串再调用方法
+        var bool =true;
+        var boolResult =parseInt(true);
+        console.log(typeof boolResult);
+        console.log( boolResult);
+
+
+       
+       
+        
+        //undefiend和null 使用toString()方法会报错，可以使用String(undefiend/null)  或者直接拼接+""
+        // var n3 =n2.toString();
+        // console.log(typeof n3);
+
+
+
+</script>
+</body>
+</html>
